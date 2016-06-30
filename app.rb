@@ -12,8 +12,10 @@ post '/adivinar' do
    @@juego.existe?(letra)
    @cantidad_correctos = @@juego.cantidad_aciertos
    @mensaje_finalizacion = ''
+   @puede_continuar_adivinando = ''
    if (@@juego.gano?)
       @mensaje_finalizacion = 'GANASTE!'
+      @puede_continuar_adivinando = 'disabled'
    end;
    erb :bienvenida
 end

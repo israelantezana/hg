@@ -26,14 +26,14 @@ Feature: Juega adivinando una letra
 
 	Scenario: Termina el juego 
 	Given estoy en la pagina de inicio
-	And la palabra a adivinar es "aladino"
-	When intento adivinar con la letra "a"
-	And intento adivinar con la letra "l"
-	And intento adivinar con la letra "d"
-	And intento adivinar con la letra "i"
-	And intento adivinar con la letra "n"
+	And la palabra a adivinar es "hola"
+	When intento adivinar con la letra "h"
 	And intento adivinar con la letra "o"
-	Then deberia ver "Letras correctas: 7"
+	And intento adivinar con la letra "l"
+	And intento adivinar con la letra "a"
+	Then deberia ver "Letras correctas: 4"
 	And deberia ver "GANASTE!"
+	And deberia ver el boton de adivinar desabilitado
+
 
 
