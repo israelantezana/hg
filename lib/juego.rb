@@ -26,4 +26,8 @@ class Juego
    def cantidad_aciertos
       @cantidad_aciertos
    end
+
+   def gano?
+     @cantidad_aciertos == @palabra_a_adivinar.length
+   end
 end

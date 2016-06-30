@@ -39,4 +39,12 @@ describe Juego do
 
      @juego.cantidad_aciertos.should == 4
    end
+
+   it "deberia detectar cuando se gana el juego" do
+     @juego.set_palabra_a_adivinar "si"
+     @juego.existe?('s')
+     @juego.gano?.should == false	
+     @juego.existe?('i')
+     @juego.gano?.should == true
+   end
 end

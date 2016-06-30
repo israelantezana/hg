@@ -24,3 +24,16 @@ Feature: Juega adivinando una letra
 	And intento adivinar con la letra "i"
 	Then deberia ver "Letras correctas: 5"
 
+	Scenario: Termina el juego 
+	Given estoy en la pagina de inicio
+	And la palabra a adivinar es "aladino"
+	When intento adivinar con la letra "a"
+	And intento adivinar con la letra "l"
+	And intento adivinar con la letra "d"
+	And intento adivinar con la letra "i"
+	And intento adivinar con la letra "n"
+	And intento adivinar con la letra "o"
+	Then deberia ver "Letras correctas: 7"
+	And deberia ver "GANASTE!"
+
+
