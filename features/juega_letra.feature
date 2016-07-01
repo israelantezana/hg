@@ -6,14 +6,21 @@ Feature: Juega adivinando una letra
 	Scenario: Una letra correcta
 	Given estoy en la pagina de inicio
 	And la palabra a adivinar es "hola"
-	And ingreso la letra "h" para adivinar
-	When presiono el boton "Adivinar"
+	When intento adivinar con la letra "h"
 	Then deberia ver "Letras correctas: 1"
 
 	Scenario: Una letra incorrecta
 	Given estoy en la pagina de inicio
-	And la palabra a adivinar es "hola"
-	And ingreso la letra "x" para adivinar
-	When presiono el boton "Adivinar"
+	And la palabra a adivinar es "chau"
+	When intento adivinar con la letra "x"
 	Then deberia ver "Letras correctas: 0"
+
+	Scenario: Todas las letras incorrectas
+	Given estoy en la pagina de inicio
+	And la palabra a adivinar es "aladino"
+	When intento adivinar con la letra "a"
+	And intento adivinar con la letra "l"
+	And intento adivinar con la letra "d"
+	And intento adivinar con la letra "i"
+	Then deberia ver "Letras correctas: 5"
 

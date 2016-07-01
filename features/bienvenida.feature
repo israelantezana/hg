@@ -7,7 +7,6 @@ Feature: Bienvenida
 	Given estoy en la pagina de inicio
 	Then deberia ver "Bienvenido al juego Ahorcado"
 
-
 	Scenario: Informacion del juego
 	Given estoy en la pagina de inicio
 	Then deberia ver "Letras correctas: 0"

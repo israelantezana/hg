@@ -2,11 +2,9 @@ Given(/^la palabra a adivinar es "(.*?)"$/) do |palabra|
    @@juego.set_palabra_a_adivinar palabra
 end
 
-Given(/^ingreso la letra "(.*?)" para adivinar$/) do |letra|
-   fill_in('adivina', :with => letra)
+When(/^intento adivinar con la letra "(.*?)"$/) do |letra|
+  fill_in('adivina', :with => letra)
+  click_button("Adivinar")
 end
 
-When(/^presiono el boton "(.*?)"$/) do |boton|
-  click_button(boton)
-end
 
