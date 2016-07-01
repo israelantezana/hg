@@ -1,5 +1,12 @@
 <h1>Bienvenido al juego Ahorcado</h1>
+<form action='/adivinar' method='post'>
+   <div>
+      <label>Ingrese letra:</label>
+      <input type='text' name='adivina'/>
+      <input type='submit' value="Adivinar"/>
+   </div>
+</form>
 <div>
-	<div>Letras correctas: 0</div>
+	<div>Letras correctas: <%=@cantidad_correctos%></div>
 	<div>Intentos fallidos: 0</div>
 </div>
