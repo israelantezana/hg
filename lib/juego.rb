@@ -13,12 +13,14 @@ class Juego
    end
 
    def existe?(letra)
-      if (@palabra_a_adivinar.include?(letra))
-         @cantidad_aciertos+= 1
-         true
-      else
-         false
-      end
+     existencias = 0
+     @palabra_a_adivinar.each_char do |l| 
+		if (letra == l) 
+		  existencias+= 1
+    	end
+     end
+     @cantidad_aciertos+= existencias
+     return (existencias > 0)
    end
 
    def cantidad_aciertos

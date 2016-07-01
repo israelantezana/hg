@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'juego'
+require './lib/juego'
 
 get '/' do
    @@juego = Juego.new

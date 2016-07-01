@@ -30,4 +30,10 @@ describe Juego do
      @juego.existe?('h')
      @juego.cantidad_aciertos.should == 1
    end
+
+   it "deberia responder con la cantidad correcta de aciertos para la misma letra" do
+     @juego.set_palabra_a_adivinar "aladino"
+     @juego.existe?('a')
+     @juego.cantidad_aciertos.should == 2
+   end
 end
