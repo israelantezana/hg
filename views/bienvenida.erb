@@ -2,7 +2,7 @@
 <form action='/adivinar' method='post'>
    <div>
       <label>Ingrese letra:</label>
-      <input type='text' name='adivina' maxlength="1"/>
+      <input type='text' name='letra' maxlength="1"/>
       <input type='submit' name ='adivinar' value="Adivinar" <%=@puede_continuar_adivinando%>/>
    </div>
 </form>
@@ -10,4 +10,10 @@
     <div><%=@mensaje_finalizacion%></div>
 	<div>Letras correctas: <%=@cantidad_correctos%></div>
 	<div>Intentos fallidos: <%=@cantidad_fallas%></div>
+</div>
+
+<div>
+   <form action = '/reiniciar' method='post'>
+      <input type='submit' name ='volver' value="Volver a Empezar">
+   </form>
 </div>

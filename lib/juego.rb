@@ -39,4 +39,8 @@ class Juego
    def gano?
      @cantidad_aciertos == @palabra_a_adivinar.length
    end
+
+   def pierde?
+     @cantidad_fallas == 6
+   end
 end

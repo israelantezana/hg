@@ -57,4 +57,16 @@ describe Juego do
      @juego.existe?('i')
      @juego.gano?.should == true
    end
+
+  it "deberia detectar cuando se pierde el juego" do
+     @juego.set_palabra_a_adivinar "si"
+     @juego.existe?('t')
+     @juego.pierde?.should == false	
+     @juego.existe?('l')
+	 @juego.existe?('t')
+     @juego.existe?('l')
+	 @juego.existe?('t')
+     @juego.existe?('l')
+     @juego.pierde?.should == true
+   end
 end

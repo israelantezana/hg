@@ -11,5 +11,10 @@ Then(/^deberia ver el boton de adivinar desabilitado$/) do
   last_response.should have_xpath("//input",:name => "adivinar",:disabled => "disabled")
 end
 
+When(/^presiono el boton "(.*?)"$/) do |boton|
+  click_button(boton)
+end
+
+
 
 

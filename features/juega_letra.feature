@@ -36,19 +36,29 @@ Feature: Juega adivinando una letra
 	And deberia ver "GANASTE!"
 	And deberia ver el boton de adivinar desabilitado
 	
-	#Scenario: Termina el juego cuando se tiene 6 fallas 
-	#Given estoy en la pagina de inicio
-	#And la palabra a adivinar es "si"
-	#When intento adivinar con la letra "x"
-	#And intento adivinar con la letra "o"
-	#And intento adivinar con la letra "l"
-	#And intento adivinar con la letra "p"
-	#And intento adivinar con la letra "u"
-	#And intento adivinar con la letra "t"
-	#Then deberia ver "Letras correctas: 0"
-	#And deberia ver "Intentos fallidos: 6"
-	#And deberia ver "PERDISTE!"
-	#And deberia ver el boton de adivinar desabilitado
+	Scenario: Termina el juego cuando se tiene 6 fallas 
+	Given estoy en la pagina de inicio
+	And la palabra a adivinar es "si"
+	When intento adivinar con la letra "x"
+	And intento adivinar con la letra "o"
+	And intento adivinar con la letra "l"
+	And intento adivinar con la letra "p"
+	And intento adivinar con la letra "u"
+	And intento adivinar con la letra "t"
+	Then deberia ver "Letras correctas: 0"
+	And deberia ver "Intentos fallidos: 6"
+	And deberia ver "PERDISTE!"
+	And deberia ver el boton de adivinar desabilitado
+    And deberia ver el boton "Volver a Empezar"
+
+	Scenario: Reiniciar juego
+	Given estoy en la pagina de inicio
+	And la palabra a adivinar es "no"
+	And intento adivinar con la letra "n"
+	And intento adivinar con la letra "x"
+	When presiono el boton "Volver a Empezar"
+	Then deberia ver "Letras correctas: 0"
+	And deberia ver "Intentos fallidos: 0"
 
 
 
