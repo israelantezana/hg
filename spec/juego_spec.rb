@@ -40,6 +40,16 @@ describe Juego do
      @juego.cantidad_aciertos.should == 4
    end
 
+   it "deberia tener 0 intentos fallidos para un juego nuevo" do
+     @juego.cantidad_fallas.should == 0
+   end
+
+   it "deberia tener 1 intento fallido cuando no acierta" do
+     @juego.set_palabra_a_adivinar "hola"
+     @juego.existe?('x')
+     @juego.cantidad_fallas.should == 1
+   end
+
    it "deberia detectar cuando se gana el juego" do
      @juego.set_palabra_a_adivinar "si"
      @juego.existe?('s')

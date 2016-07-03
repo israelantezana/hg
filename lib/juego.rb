@@ -3,6 +3,7 @@ class Juego
    def initialize
       @palabra_a_adivinar = "ahorcado"
       @cantidad_aciertos = 0
+      @cantidad_fallas = 0
    end
    def palabra_a_adivinar 
       @palabra_a_adivinar
@@ -19,12 +20,20 @@ class Juego
 		  existencias+= 1
     	end
      end
-     @cantidad_aciertos+= existencias
+     if (existencias > 0) #si acert'o
+       @cantidad_aciertos+= existencias
+     else
+       @cantidad_fallas+= 1
+     end
      return (existencias > 0)
    end
 
    def cantidad_aciertos
       @cantidad_aciertos
+   end
+
+   def cantidad_fallas
+      @cantidad_fallas
    end
 
    def gano?
