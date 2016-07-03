@@ -5,7 +5,7 @@ Feature: Bienvenida
 
 	Scenario: Hola Ahorcado
 	Given estoy en la pagina de inicio
-	Then deberia ver "Bienvenido al juego Ahorcado"
+	Then deberia ver "Bienvenido al Juego Ahorcado"
 
 	Scenario: Informacion del juego
 	Given estoy en la pagina de inicio

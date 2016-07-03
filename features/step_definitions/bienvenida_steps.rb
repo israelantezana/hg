@@ -8,7 +8,7 @@ end
 
 Then(/^deberia ver el boton de adivinar desabilitado$/) do
   #last_response.should have_xpath("//input[@name=\"adivina\"]")
-  last_response.should have_xpath("//input",:name => "adivinar",:disabled => "disabled")
+  last_response.should have_xpath("//input",:name => "btn_adivinar",:disabled => "disabled")
 end
 
 When(/^presiono el boton "(.*?)"$/) do |boton|
