@@ -1,36 +1,25 @@
 <div class='container'>
 	<div class='row'>
 		<div class='col-md-2'></div>
-		<div class='col-md-8'><h1>Bienvenido al Juego Ahorcado</h1></div>
-		<div class='col-md-2'></div>
-	</div>
-	<div class='row'>
-		<form action='/adivinar' method='post'>
-			<div class='col-md-2'></div>
-			<div class='col-md-8'>
-				<label>Ingrese letra:</label>
-				<input type='text' name='letra' maxlength="1"/>
-				<input type='submit' class='btn-primary' name ='btn_adivinar' value='Adivinar' <%=@puede_continuar_adivinando%>/>
+		<div class='col-md-8'>
+			<h1>Bienvenido al Juego Ahorcado</h1>
+			<div class='row'>
+				<form action='/adivinar' method='post'>
+					<label>Ingrese letra:</label>
+					<input type='text' name='letra' maxlength="1"/>
+					<input type='submit' class='btn-primary' name ='btn_adivinar' value='Adivinar' <%=@puede_continuar_adivinando%>/>
+				</form>
 			</div>
-			<div class='col-md-2'></div>
-		</form>
-	</div>
-	<div class='row'>
-		<div class='col-md-2'></div>
-		<div class='col-md-8'>
-			<div><%=@mensaje_finalizacion%></div>
-			<div>Letras correctas: <%=@cantidad_correctos%></div>
-			<div>Intentos fallidos: <%=@cantidad_fallas%></div>
+			<div class='row'>
+				<div><%=@mensaje_finalizacion%></div>
+				<div>Letras correctas: <%=@cantidad_correctos%></div>
+				<div>Intentos fallidos: <%=@cantidad_fallas%></div>
+			</div>
+			<div class='row'>
+				<form action='/reiniciar' method='post'>
+					<input type='submit' class='btn btn-info' name ='btn_reiniciar' value="Volver a Empezar">
+				</form>
+			</div>
 		</div>
-		<div class='col-md-2'></div>
-	</div>
-	<div class='row'>
-		<div class='col-md-2'></div>
-		<div class='col-md-8'>
-			<form action='/reiniciar' method='post'>
-				<input type='submit' class='btn btn-info' name ='btn_reiniciar' value="Volver a Empezar">
-			</form>
-		</div>
-		<div class='col-md-2'></div>	
 	</div>
 </div>
