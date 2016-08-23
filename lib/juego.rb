@@ -5,7 +5,12 @@ class Juego
       @cantidad_aciertos = 0
       @cantidad_fallas = 0
    end
-   def palabra_a_adivinar 
+
+   def usar_palabra_al_azar palabras
+      @palabra_a_adivinar = palabras[rand(palabras.size)]
+   end
+
+   def palabra_a_adivinar
       @palabra_a_adivinar
    end
 
@@ -15,8 +20,8 @@ class Juego
 
    def existe?(letra)
      existencias = 0
-     @palabra_a_adivinar.each_char do |l| 
-		if (letra == l) 
+     @palabra_a_adivinar.each_char do |l|
+		if (letra == l)
 		  existencias+= 1
     	end
      end
@@ -42,5 +47,9 @@ class Juego
 
    def pierde?
      @cantidad_fallas == 6
+   end
+
+   def cantidad_letras
+     @palabra_a_adivinar.length
    end
 end

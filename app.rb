@@ -8,6 +8,7 @@ end
 post '/adivinar' do
    letra = params[:letra]
    @@juego.existe?(letra)
+   @cantidad_letras = @@juego.cantidad_letras
    @cantidad_correctos = @@juego.cantidad_aciertos
    @cantidad_fallas = @@juego.cantidad_fallas
    @mensaje_finalizacion = ''
@@ -29,6 +30,8 @@ end
 
 def iniciar_juego
    @@juego = Juego.new
+   @@juego.usar_palabra_al_azar(["ahorcado", "santiago", "israel", "angela", "erika","despertad"])
+   @cantidad_letras = @@juego.cantidad_letras
    @cantidad_correctos = @@juego.cantidad_aciertos
    @cantidad_fallas = @@juego.cantidad_fallas
    erb :bienvenida
