@@ -2,10 +2,7 @@ require 'sinatra'
 require './lib/juego'
 
 get '/' do
-   @@juego = Juego.new
-   @cantidad_correctos = @@juego.cantidad_aciertos
-   @cantidad_fallas = @@juego.cantidad_fallas
-   erb :bienvenida
+   iniciar_juego
 end
 
 post '/adivinar' do
@@ -27,8 +24,12 @@ post '/adivinar' do
 end
 
 post '/reiniciar' do
-  @@juego = Juego.new
-  @cantidad_correctos = @@juego.cantidad_aciertos
-  @cantidad_fallas = @@juego.cantidad_fallas
-  erb :bienvenida
+  iniciar_juego
+end
+
+def iniciar_juego
+   @@juego = Juego.new
+   @cantidad_correctos = @@juego.cantidad_aciertos
+   @cantidad_fallas = @@juego.cantidad_fallas
+   erb :bienvenida
 end
